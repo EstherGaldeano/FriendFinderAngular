@@ -1,0 +1,57 @@
+#banner{
+    width:100%;
+}
+
+.animals-main {
+  margin-bottom:30px;
+}
+
+.card-img{
+    width:300px;
+    height:200px;
+    transition: transform .10s;
+
+}
+
+#animalCard:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1);
+    z-index: +1;
+  }
+
+.row{
+
+    margin: auto;
+
+}
+
+.nav-item{
+    background-color: #593196;
+    color: white;
+    box-shadow: #A991D4;
+}
+
+.nav-item:hover{
+   border-color:rgb(248, 84, 185);
+
+}
+
+
+.nav-link.active{
+    background-color: rgb(137, 94, 218);
+    color:white;
+
+}
+
+.container-fluid{
+
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+.btn{
+    padding:0;
+    margin:0;
+}

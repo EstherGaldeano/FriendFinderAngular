@@ -1,0 +1,44 @@
+<div id="top"></div>
+<app-navbar></app-navbar>
+
+
+<div class="animals-main">
+
+  <img src="../../assets/img/banner.png" class="img-fluid" id="banner" width=100% alt="Responsive image">
+
+  <ul class="nav nav-tabs nav-justified navbar-light bg-light">
+      <!-- Si la Tab seleccionada es null muestra todos los animales-->
+    <li class="nav-item" (click)="selectedClass = null">
+      <a class="nav-item nav-link {{selectedClass == null ? 'active' : ''}}" routerLink="/animals">Todos</a>
+    </li>
+       <!--Si la clase/Tab seleccionada es Cat solo muestra gatos -->
+    <li class="nav-item" (click)="selectedClass = 'Cat'">
+      <a class="nav-item nav-link {{selectedClass == 'Cat' ? 'active' : ''}}" routerLink="/animals">Gatos</a>
+    </li>
+       <!--Si la clase/Tab seleccionada es Dog solo muestra Perros -->
+    <li class="nav-item" (click)="selectedClass = 'Dog'">
+      <a class="nav-item nav-link {{selectedClass == 'Dog' ? 'active' : ''}}" routerLink="/animals">Perros</a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="container-fluid" id="gridAnimales">
+  <div class="row justify-content-center">
+       <!--ngFor nos muestra todos los animales del Array de animales que tenemos en el animalService -->
+    <div *ngFor="let animal of animalService.getAnimals(this.selectedClass)">
+       <!--Si pulsamos sobre una card de animal nos lleva al detalle de este
+        pasándole el id del animal seleccionado a la ruta -->
+      <a routerLink="/fichaAnimal/{{animal.id}}" class="btn btn-fix text-left">
+        <div class="card bg-dark text-white" id="animalCard">
+          <img class="card-img" src='{{animal.foto}}' alt="Card image">
+          <div class="card-img-overlay">
+            <h5 class="card-title">{{animal.name}}</h5>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+       <!--Módulo del footer -->
+
+  <app-footer></app-footer>

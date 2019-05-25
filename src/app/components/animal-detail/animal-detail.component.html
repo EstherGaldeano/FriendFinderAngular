@@ -1,0 +1,32 @@
+<div id="top"></div>
+<app-navbar></app-navbar>
+
+<div *ngIf="animal">
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="row card-body">
+          <div class="col-sm-7">
+            <h5 class="card-title"><strong>Nombre: </strong>  {{animal.name}}</h5>
+            <p class="card-text"> <strong>Edad: </strong> {{animal.age}}</p>
+            <p class="card-text"> <strong>Descripción: </strong> {{animal.description}} </p>
+            <p class="card-text"> <strong>Protectora: </strong> {{animal.protectora}} </p>
+            <p class="card-text"> <strong>Contacto: </strong> {{animal.contacto}}</p>
+
+          </div>
+          <img class="col-sm-5 col-xs-3 img-fluid imagenAnimal" src="{{animal.foto}}" alt="sans" />
+        </div>
+        <div class="card-body">
+
+          <a href=" " routerLink="/animals" class="card-link">Volver</a>
+          <a href=" " class="card-link">Contactar con la Protectora</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- módulo del footer-->
+<app-footer></app-footer>
